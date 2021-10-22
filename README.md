@@ -1,4 +1,4 @@
-# simoc-python
+# simoc-javascript
 #### SER401 Captsone — Team 29 — 29 A Digital Interface to a Mars Habitat
 
 ## Description
