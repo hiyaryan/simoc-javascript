@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/ChartApp.vue'
+import ChartApp from '@/components/ChartApp.vue'
 
 describe('ChartApp.vue', () => {
   it('renders props.msg when passed', () => {
     const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
+    const wrapper = shallowMount(ChartApp, {
       propsData: { msg }
     })
     expect(wrapper.text()).toMatch(msg)
