@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Wiki from '../views/Wiki.vue'
 
 Vue.use(VueRouter)
 
@@ -19,11 +20,19 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/About.vue')
     }
+  },
+  {
+    path: '/wiki',
+    name: 'Wiki',
+    component: Wiki
   }
 ]
 
 const router = new VueRouter({
-  routes
+  routes: [
+    // using redirect route to show syntax
+    { path: '/wikipedia', redirect: '/wiki'}
+  ]
 })
 
 export default router
