@@ -10,9 +10,15 @@
     </div>
 
 <!--    This div is the container for the buttons-->
-    <div class="button-container">
-      <div class="dropdown-placeholder">
+    <div class="controls-container">
 
+      <div class="dropdown-container">
+        <select name="charts" id="chart-select">
+          <option value="">-- Please select a chart --</option>
+          <option value="chart1">Chart 1</option>
+          <option value="chart2">Chart 2</option>
+          <option value="chart3">Chart 3</option>
+        </select>
       </div>
 
       <div class="enter-placeholder">
@@ -66,7 +72,7 @@ a {
 /*  background-color: #555;*/
 /*}*/
 
-.button-container {
+.controls-container {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -74,22 +80,31 @@ a {
   margin: 40px 0 0;
 }
 
-.button-container > .dropdown-placeholder {
-  height: 50px;
-  width: 280px;
-  background-color: #555;
-}
+/*.controls-container > .dropdown-container {*/
+/*  height: 50px;*/
+/*  width: 280px;*/
+/*  background-color: #555;*/
+/*}*/
 
-.button-container > .enter-placeholder {
-  height: 50px;
-  width: 100px;
-  background-color: #555;
-}
-
-.button-container > .reset-placeholder {
+.controls-container > .enter-placeholder {
   height: 50px;
   width: 100px;
   background-color: #555;
 }
 
+.controls-container > .reset-placeholder {
+  height: 50px;
+  width: 100px;
+  background-color: #555;
+}
+
+
+.controls-container > .dropdown-container > #chart-select {
+  height: 50px;
+  width: fit-content;
+  border-radius: 8px;
+  border: solid #42b983;
+  box-sizing: border-box;
+  font-weight: 800;
+}
 </style>
