@@ -25,8 +25,8 @@
         <button name="enter" id="enter-button">Enter</button>
       </div>
 
-      <div class="reset-placeholder">
-
+      <div class="refresh-button-container">
+        <button name="refresh" id="refresh-button">Refresh</button>
       </div>
     </div>
 
@@ -95,9 +95,12 @@ a {
   background-color: #42b983;
 }
 
-.controls-container > .reset-placeholder {
+.controls-container > .refresh-button-container > #refresh-button {
   height: 50px;
   width: 100px;
+  border-radius: 8px;
+  font-weight: 800;
+  color: inherit;
   background-color: #555;
 }
 
