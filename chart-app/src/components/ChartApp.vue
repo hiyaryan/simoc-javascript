@@ -4,9 +4,9 @@
 
 <!--    This div is the container for the chart component-->
     <div class="chart-container">
-      <div class="chart-placeholder">
-
-      </div>
+      <!-- Using Chart.js in a Vue.js Application-->
+      <!-- Step 2. Modify App.vue to use the new Chart component-->
+      <SampleChart/>
     </div>
 
 <!--    This div is the container for the buttons-->
@@ -28,11 +28,16 @@
 </template>
 
 <script>
+// Using Chart.js in a Vue.js Application
+// Step 2. Modify ChartApp.vue to use the new Chart Component in this Component
+import SampleChart from "@/components/SampleChart";
+
 export default {
   name: 'ChartApp',
   props: {
     msg: String
-  }
+  },
+  components: {SampleChart}
 }
 </script>
 
@@ -42,33 +47,24 @@ h3 {
   margin: 40px 0 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
 a {
   color: #42b983;
 }
 
+/* Using Chart.js in a Vue.js Application*/
+/* Step 7. Adjust chart size and position*/
 .chart-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 0;
-
-}
-
-/* The following CSS to the end of the file are placeholder elements to help with organizing the layout */
-.chart-container > .chart-placeholder {
   height: 250px;
   width: 500px;
-  background-color: #555;
+  margin: 0 auto;
 }
+
+/*!* The following CSS to the end of the file are placeholder elements to help with organizing the layout *!*/
+/*.chart-container > .chart-placeholder {*/
+/*  height: 250px;*/
+/*  width: 500px;*/
+/*  background-color: #555;*/
+/*}*/
 
 .button-container {
   display: flex;
@@ -76,7 +72,6 @@ a {
   flex-direction: row;
   column-gap: 10px;
   margin: 40px 0 0;
-
 }
 
 .button-container > .dropdown-placeholder {
