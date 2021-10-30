@@ -106,5 +106,7 @@ a {
   border: solid #42b983;
   box-sizing: border-box;
   font-weight: 800;
+  color: inherit;
+  margin-right: 50px;
 }
 </style>
