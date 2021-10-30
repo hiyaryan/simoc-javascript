@@ -21,8 +21,8 @@
         </select>
       </div>
 
-      <div class="enter-placeholder">
-
+      <div class="enter-button-container">
+        <button name="enter" id="enter-button">Enter</button>
       </div>
 
       <div class="reset-placeholder">
@@ -76,7 +76,7 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: 20px;
   margin: 40px 0 0;
 }
 
@@ -86,10 +86,13 @@ a {
 /*  background-color: #555;*/
 /*}*/
 
-.controls-container > .enter-placeholder {
+.controls-container > .enter-button-container > #enter-button {
   height: 50px;
   width: 100px;
-  background-color: #555;
+  border-radius: 8px;
+  font-weight: 800;
+  color: inherit;
+  background-color: #42b983;
 }
 
 .controls-container > .reset-placeholder {
