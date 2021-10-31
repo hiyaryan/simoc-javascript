@@ -1,38 +1,59 @@
 <template>
-  <div class="chart">
-    <h1>{{ msg }}</h1>
+    <div class="chart">
+        <h1>{{msg}}</h1>
 
-<!--    This div is the container for the chart component-->
-    <div class="chart-container">
-      <div class="chart-placeholder">
+        <!--    This div is the container for the chart component-->
+        <div class="chart-container">
+            <!-- Using Chart.js in a Vue.js Application-->
+            <!-- Step 2. Modify App.vue to use the new Chart component-->
+            <SampleChart />
+        </div>
 
-      </div>
+        <!--    This div is the container for the buttons-->
+        <div class="controls-container">
+
+            <div class="dropdown-container">
+                <select id="chart-select" name="charts">
+                    <option value="" hidden disabled selected>--Please select a chart--</option>
+                    <option v-for="(chart, name) in charts" :key="name" :value="name">{{chart.label}}</option>
+                </select>
+            </div>
+
+            <div class="enter-button-container">
+                <button id="enter-button" name="enter">Enter</button>
+            </div>
+
+            <div class="refresh-button-container">
+                <button id="refresh-button" name="refresh">Refresh</button>
+            </div>
+        </div>
+
     </div>
-
-<!--    This div is the container for the buttons-->
-    <div class="button-container">
-      <div class="dropdown-placeholder">
-
-      </div>
-
-      <div class="enter-placeholder">
-
-      </div>
-
-      <div class="reset-placeholder">
-
-      </div>
-    </div>
-
-  </div>
 </template>
 
 <script>
+// Using Chart.js in a Vue.js Application
+// Step 2. Modify ChartApp.vue to use the new Chart Component in this Component
+import SampleChart from '@/components/SampleChart'
+
 export default {
-  name: 'ChartApp',
-  props: {
-    msg: String
-  }
+    name: 'ChartApp',
+    components: {SampleChart},
+    props: {
+        msg: {
+            type: String,
+            default: '',
+        },
+    },
+    data() {
+        return {
+            charts: {
+                chart1: {label: 'Chart 1'},
+                chart2: {label: 'Chart 2'},
+                chart3: {label: 'Chart 3'},
+            },
+        }
+    },
 }
 </script>
 
@@ -42,59 +63,52 @@ h3 {
   margin: 40px 0 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
 a {
   color: #42b983;
 }
 
+/* Using Chart.js in a Vue.js Application*/
+/* Step 7. Adjust chart size and position*/
 .chart-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 0;
-
-}
-
-/* The following CSS to the end of the file are placeholder elements to help with organizing the layout */
-.chart-container > .chart-placeholder {
   height: 250px;
   width: 500px;
-  background-color: #555;
+  margin: 0 auto;
 }
 
-.button-container {
+.controls-container {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: 20px;
   margin: 40px 0 0;
-
 }
 
-.button-container > .dropdown-placeholder {
-  height: 50px;
-  width: 280px;
-  background-color: #555;
-}
-
-.button-container > .enter-placeholder {
+#enter-button {
   height: 50px;
   width: 100px;
-  background-color: #555;
+  border-radius: 8px;
+  font-weight: 800;
+  color: inherit;
+  background-color: #42b983;
 }
 
-.button-container > .reset-placeholder {
+#refresh-button {
   height: 50px;
   width: 100px;
+  border-radius: 8px;
+  font-weight: 800;
+  color: inherit;
   background-color: #555;
 }
 
+#chart-select {
+  height: 50px;
+  width: 200px;
+  border-radius: 8px;
+  border: solid #42b983;
+  box-sizing: border-box;
+  font-weight: 800;
+  color: inherit;
+  margin-right: 50px;
+}
 </style>
