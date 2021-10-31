@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Wiki from '../views/Wiki.vue'
+import Home from '../views/Home'
+import Wiki from '../views/Wiki'
 
 Vue.use(VueRouter)
 
