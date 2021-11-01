@@ -3,7 +3,7 @@
         <h1>{{msg}}</h1>
 
         <!--    This div is the container for the chart component-->
-        <div class="chart-container">
+        <div id="chart-container" class="chart-container">
             <!-- Using Chart.js in a Vue.js Application-->
             <!-- Step 2. Modify App.vue to use the new Chart component-->
             <SampleChart />
@@ -14,17 +14,17 @@
 
             <div class="dropdown-container">
                 <select id="chart-select" name="charts">
-                    <option value="" hidden disabled selected>--Please select a chart--</option>
-                    <option v-for="(chart, name) in charts" :key="name" :value="name">{{chart.label}}</option>
+                    <option selected disabled value="">--Please select a chart--</option>
+                    <option v-for="(chart, name) in charts"
+                            :key="name"
+                            :value="name">
+                        {{chart.label}}
+                    </option>
                 </select>
             </div>
 
-            <div class="enter-button-container">
-                <button id="enter-button" name="enter">Enter</button>
-            </div>
-
             <div class="refresh-button-container">
-                <button id="refresh-button" name="refresh">Refresh</button>
+                <button id="refresh-button" name="refresh">Step</button>
             </div>
         </div>
 
@@ -83,22 +83,13 @@ a {
   margin: 40px 0 0;
 }
 
-#enter-button {
-  height: 50px;
-  width: 100px;
-  border-radius: 8px;
-  font-weight: 800;
-  color: inherit;
-  background-color: #42b983;
-}
-
 #refresh-button {
   height: 50px;
   width: 100px;
   border-radius: 8px;
   font-weight: 800;
   color: inherit;
-  background-color: #555;
+  background-color: #42b983;
 }
 
 #chart-select {
