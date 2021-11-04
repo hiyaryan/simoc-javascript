@@ -3,17 +3,18 @@
         <h1>{{msg}}</h1>
 
         <!--    This div is the container for the chart component-->
-        <div id="chart-container" class="chart-container">
+        <div id="chart-container" class="chart-container" hidden>
             <!-- Using Chart.js in a Vue.js Application-->
             <!-- Step 2. Modify App.vue to use the new Chart component-->
             <SampleChart />
+            <p>{{key}}</p>
         </div>
 
         <!--    This div is the container for the buttons-->
         <div class="controls-container">
 
             <div class="dropdown-container">
-                <select id="chart-select" name="charts">
+                <select id="chart-select" v-model="key" @change="revealChart($event)">
                     <option selected disabled value="">--Please select a chart--</option>
                     <option v-for="(chart, name) in charts"
                             :key="name"
@@ -52,7 +53,17 @@ export default {
                 chart2: {label: 'Chart 2'},
                 chart3: {label: 'Chart 3'},
             },
+            key: '',
         }
+    },
+    methods: {
+        revealChart(event) {
+            if (event.target.value === 'chart1') {
+                document.querySelector('#chart-container').removeAttribute('hidden')
+            } else {
+                document.querySelector('#chart-container').setAttribute('hidden', 'true')
+            }
+        },
     },
 }
 </script>
